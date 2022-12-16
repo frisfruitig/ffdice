@@ -2,7 +2,7 @@
 # Die
 # ---
 # A class that acts as a random number generator.
-# It can be included to return a random number between a given minimum and maximum value, based on the number of sides of the die.
+# It can be included to return a random number between 1 and maximum value, based on the number of sides of the die.
 from random import randint
 
 class Die:
@@ -27,13 +27,17 @@ class Die:
 
   #region Public methods
 
-  # Simulate dice roll
+  # Roll the die.
   # ---
-  # Exclude the previous random number, as the random number should be different each time while the dice is still rolling.
+  # Picks a random side of the die each time.
+  # By setting the `animate` argument to `True`, the roll is simulated in the sense that the die can't show the same number twice in a row. If it could, it wouldn't be rolling.
   # ---
-  # @returns rng (int)  Randomly generated number that differs from any previous RNG
-  def roll(self) -> int:
-    filtered = list(filter(lambda x: x != self.__prev_rng, self.__sides_list))
+  # @param animate (bool)   Determines whether the previous outcome should be excluded.
+  # ---
+  # @returns rng (int)      Randomly generated number
+  def roll(self, animate: bool = False) -> int:
+    match = 0 if animate == False else self.__prev_rng
+    filtered = list(filter(lambda x: x != match, self.__sides_list))
     index = randint(1, len(filtered))
     rng = filtered[index - 1]
     self.__prev_rng = rng
