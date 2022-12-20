@@ -9,21 +9,28 @@ import atexit
 die = Die()
 hat = SenseHat()
 degrees = cycle([0, 90, 180, 270])
+spins = 15
+threshold = 2
 
 # Reset the LEDs when exiting the program.
-def quit() -> None:
+def reset() -> None:
   hat.clear()
-atexit.register(quit)
+atexit.register(reset)
 
 # Main functionality.
 while True:
-  # Roll the die each time the SenseHat joystick is pressed
-  event = hat.stick.wait_for_event()
-  if(event.action == "pressed" and event.direction == "middle"):
+  # Allow the LED display to be cleared with the joystick.
+  hat.stick.direction_middle = reset
+  # Roll the die when the SenseHat is being shaked.
+  acceleration = hat.get_accelerometer_raw()
+  x = abs(acceleration['x'])
+  y = abs(acceleration['y'])
+  z = abs(acceleration['z'])
+  if (x > threshold or y > threshold or z > threshold):
     # Simulate a rolling die by calling the `roll()` function a couple of times.
     # Set its argument `animate` to `True` in order to prevent the same number from being generated twice in a row.
     i = 0
-    while (i < 10):
+    while (i < spins):
       number = die.roll(True)
       hat.set_pixels(matrix[number])
       # Rotate display and update the index to cycle through the rotation values.
