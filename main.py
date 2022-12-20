@@ -8,7 +8,7 @@ import atexit
 # Create a basic die with 6 sides.
 die = Die()
 hat = SenseHat()
-rotation = cycle([0, 90, 180, 270])
+degrees = cycle([0, 90, 180, 270])
 
 # Reset the LEDs when exiting the program.
 def quit() -> None:
@@ -27,7 +27,7 @@ while True:
       number = die.roll(True)
       hat.set_pixels(matrix[number])
       # Rotate display and update the index to cycle through the rotation values.
-      degrees = next(rotation)
-      hat.set_rotation(degrees, False)
+      rotation = next(degrees)
+      hat.set_rotation(rotation, False)
       i += 1
       sleep(0.1)
