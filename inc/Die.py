@@ -3,9 +3,10 @@
 # ---
 # A class that acts as a random number generator.
 # It can be included to return a random number between 1 and maximum value, based on the number of sides of the die.
+from abc import ABC, abstractmethod
 from random import randint
 
-class Die:
+class Die(ABC):
 
   #region Attributes
 
