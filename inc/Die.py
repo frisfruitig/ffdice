@@ -3,10 +3,11 @@
 # ---
 # A class that acts as a random number generator.
 # It can be included to return a random number between 1 and maximum value, based on the number of sides of the die.
-from abc import ABC, abstractmethod
 from random import randint
+# TODO: Split RNG class from Die class.
+# TODO: Import LED matrix for 6-sided die.
 
-class Die(ABC):
+class Die:
 
   #region Attributes
 
@@ -27,6 +28,8 @@ class Die(ABC):
   #endregion
 
   #region Public methods
+
+  # TODO: Add method to roll die that returns a LED matrix corresponding to the RNG from the `roll` method.
 
   # Roll the die.
   # ---
