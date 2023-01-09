@@ -1,7 +1,7 @@
 # --------
 # ColorDie
 # --------
-# A Die subclass that displays a color instead of a numeric value.
+# A subclass for dice with colored sides instead numbers.
 from .Die import Die
 
 class ColorDie(Die):
@@ -14,22 +14,38 @@ class ColorDie(Die):
 
   #region Public methods
 
-  # Roll the die.
+  # Roll the die (for LED display).
   # ---
-  # @param animate (bool)   Determines whether the previous outcome should be excluded.
+  # Visual representation the super `roll()` function.
+  # Instead of returning an integer, return information that can be used to display on a LED matrix.
   # ---
-  # @returns RGB (list)     RGB color mapped to the randomly generated number index in `__colors`.
-  def roll(self, animate: bool = False) -> list:
-    rng = super().roll(animate)
-    return self.__colors[rng - 1]
+  # @param unique (bool)    Determines whether the previous outcome should be excluded.
+  # ---
+  # @returns matrix (list)  List of color values that can be used on a LED display.
+  def roll_image(self, unique: bool = False) -> list:
+    rng = self.roll(unique)
+    O = [  0,   0,   0]
+    X = [255, 255, 255]
+    C = self.__colors[rng - 1]
+    matrix = [
+      X, X, X, X, X, X, X, O,
+      X, X, C, C, C, X, X, O,
+      X, C, C, C, C, C, X, O,
+      X, C, C, C, C, C, X, O,
+      X, C, C, C, C, C, X, O,
+      X, X, C, C, C, X, X, O,
+      X, X, X, X, X, X, X, O,
+      O, O, O, O, O, O, O, O,
+    ]
+    return matrix
 
   #endregion
 
   #region Constructor
 
-  # Constructor with parameters
+  # Constructor with parameters.
   # ---
-  # @param colors (list)  The RGB values of each side.
+  # @param colors (list)    List of RGB color values for each side.
   def __init__(self, colors: list = []):
     if colors != []:
       self.__colors = colors
@@ -42,7 +58,6 @@ class ColorDie(Die):
         [ 60, 215, 100], # Green
         [ 60, 100, 215], # Blue
       ]
-    super().__init__(len(self.__colors))
-    print(self.__colors)
+    super().__init__(self.__colors)
 
   #endregion
