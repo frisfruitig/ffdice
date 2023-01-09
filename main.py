@@ -1,5 +1,5 @@
 from inc.Die import Die
-from inc.LED import matrices as matrix
+from inc.led_matrix import led_matrix
 from sense_hat import SenseHat
 from time import sleep
 from itertools import cycle
