@@ -1,5 +1,4 @@
-from inc.Die import Die
-from inc.led_matrix import led_matrix
+from src.Die import Die
 from sense_hat import SenseHat
 from time import sleep
 from itertools import cycle
@@ -31,8 +30,8 @@ while True:
     # Set its argument `animate` to `True` in order to prevent the same number from being generated twice in a row.
     i = 0
     while (i < spins):
-      number = die.roll(True)
-      hat.set_pixels(matrix[number])
+      number = die.roll_image(True)
+      hat.set_pixels(number)
       # Rotate display and update the index to cycle through the rotation values.
       rotation = next(degrees)
       hat.set_rotation(rotation, False)

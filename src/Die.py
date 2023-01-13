@@ -4,13 +4,13 @@
 # An RNG subclass that acts as a basic die.
 # It may return a random number between 1 and 6, based on its sides.
 from .RNG import RNG
-from .led_matrix import led_matrix
+from ._matrix import _matrix
 
 class Die(RNG):
 
   #region Attributes
 
-  __images: list = []
+  __images: list
 
   #endregion
 
@@ -42,16 +42,18 @@ class Die(RNG):
 
   #endregion
 
-  #region Constructor
+  #region Instance special methods
 
-  # Constructor with parameters.
+  # Construct.
   # ---
-  # @param images (list)    Color values that can be used on a LED display.
-  def __init__(self, images: list = []):
+  # Called after the instance is created by `__new__()`.
+  # ---
+  # @param images (list)    List of color values that can be used on a LED display.
+  def __init__(self, images: list = []) -> None:
     if images != []:
       self.__images = images
     else:
-      self.__images = led_matrix
+      self.__images = _matrix
     super().__init__(len(self.__images))
 
   #endregion

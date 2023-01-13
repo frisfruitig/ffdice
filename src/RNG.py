@@ -8,8 +8,8 @@ class RNG:
 
   #region Attributes
 
-  __list: list = []
-  __prev_rng: int = 0
+  __list: list
+  __prev_rng: int
 
   #endregion
 
@@ -32,15 +32,19 @@ class RNG:
 
   #endregion
 
-  #region Constructor
+  #region Instance special methods
 
-  # Constructor with parameters.
+  # Construct.
+  # ---
+  # Called after the instance is created by `__new__()`.
   # ---
   # @param maximum (int)  The maximum value of the range.
-  def __init__(self, maximum):
+  def __init__(self, maximum) -> None:
     try:
-      for i in range(1, maximum + 1):
-        self.__list.append(i)
+      self.__list = []
+      self.__prev_rng = 0
+      for i in range(0, maximum):
+        self.__list.append(i + 1)
     except Exception as err:
         print(err)
 
