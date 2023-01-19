@@ -5,7 +5,16 @@ Essentially, it's a random number generator (RNG) that can be used for multiple 
 
 ## Getting started
 
+### Examples
+
 Look at the [examples](examples/) for a few basic implementation ideas.
+
+If you would like to run the files from your command line, use the `-m` flag while using the dots to specify the path of the file.
+For example: the file [examples/basic/example.py](examples/basic/example.py) can be executed with the following command:
+
+```
+python -m examples.basic.example
+```
 
 ### Unit testing
 
