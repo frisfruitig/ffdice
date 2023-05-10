@@ -3,24 +3,19 @@ from src.Die import Die
 
 class TestDie(unittest.TestCase):
   
-  # Basic test.
+  # Basic test (D6).
   # ---
-  # Roll a couple of times to determine the highest outcome.
+  # Roll a couple of times to determine the highest outcome. 
   # For a basic die, obviously, this can't be higher than 6.
   def test_default(self) -> None:
     die = Die()
     outcomes = []
+    # The probability of rolling a 6 is almost 100% when rolling 50 times.
+    # Reference: https://www.gigacalculator.com/calculators/dice-probability-calculator.php
     for i in range(50):
       outcomes.append(die.roll())
-    self.assertEqual(max(outcomes), 6, "SIX!!!")
+    self.assertEqual(max(outcomes), 6, "The expected output should be equal to 6.")
 
-  # Single sided die.
-  # ---
-  # When passing a list with a single value, the only possible outcome is 1.
-  def test_basic(self) -> None:
-    die = Die([1])
-    self.assertEqual(die.roll(), 1, "The expected output should be equal to 1.")
-  
   # Unique outcomes.
   # ---
   # Pass `True` as an argument to the `roll()` method.
@@ -37,6 +32,25 @@ class TestDie(unittest.TestCase):
       else:
         outcomes.append(rng)
     self.assertEqual(duplicate, False, "The value of variable `duplicate` should remain `False`.")
+  
+  # Single sided die (D1).
+  # ---
+  # When passing a list with a single value, the only possible outcome is 1.
+  def test_single_sided(self) -> None:
+    die = Die(1)
+    self.assertEqual(die.roll(), 1, "The expected output should be equal to 1.")
+  
+  # Twenty sided die (D20).
+  # ---
+  # When passing a list with a single value, the only possible outcome is 1.
+  def test_twenty_sided(self) -> None:
+    die = Die(20)
+    outcomes = []
+    # The probability of rolling a 20 is almost 100% when rolling 100 times.
+    # Reference: https://www.gigacalculator.com/calculators/dice-probability-calculator.php
+    for i in range(100):
+      outcomes.append(die.roll())
+    self.assertEqual(max(outcomes), 20, "The expected output should be equal to 20.")
 
 if __name__ == '__main__':
   unittest.main()
