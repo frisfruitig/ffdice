@@ -1,6 +1,6 @@
-# --------
-# BasicDie
-# --------
+# ---
+# Die
+# ---
 # An RNG subclass that acts as a basic die.
 # It may return a random number between 1 and 6, based on its sides.
 from .RNG import RNG
