@@ -1,7 +1,7 @@
 # Raspberry Pi Dice
 
 A simple, undistributed, Python package that acts as a die.
-Essentially, it's a random number generator (RNG) that can be used for multiple purposes. However, this package was created as a side-project aiming to create a fairly simple dice rolling application for the Raspberry Pi Sense Hat.
+Essentially, it's a random number generator (RNG) that can be used for multiple purposes.
 
 ## Getting started
 
@@ -34,4 +34,4 @@ The contents of the `dist` folder can be uploaded to the Python Package Index (p
 
 ## Notes
 
-This project was created both to learn something and to scratch a personal itch. If you like it, or have any issues with it, feel free to [reach out by email](mailto:info@frisfruitig.com)!
+This project was created both to learn and to scratch a personal itch. If you like it, or have any issues with it, feel free to [reach out by email](mailto:info@frisfruitig.com)!
