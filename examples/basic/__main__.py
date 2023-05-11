@@ -5,7 +5,7 @@ from src.Die import Die
 die_one = Die()
 die_two = Die()
 
-# For this instance, the `roll()` function will return a number between 1 and 6.
+# For this instance, the `roll()` method will return a number between 1 and 6.
 a = die_one.roll()
 b = die_two.roll()
 print("You rolled %d and %d, adding up to a total of %d!" % (a, b, a + b))
