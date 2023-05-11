@@ -1,11 +1,11 @@
 # ---
-# Die
+# Dice
 # ---
-# An RNG subclass that acts as a basic die.
+# An RNG subclass that acts as a basic dice.
 # It may return a random number between 1 and 6, based on its sides.
 from .RNG import RNG
 
-class Die(RNG):
+class Dice(RNG):
 
   #region Attributes
 
@@ -15,10 +15,10 @@ class Die(RNG):
 
   #region Public methods
 
-  # Roll the die.
+  # Roll the dice.
   # ---
-  # Picks a random side of the die each time.
-  # By setting the `unique` argument to `True`, the roll is simulated in the sense that the die can't show the same number twice in a row.
+  # Picks a random side of the dice each time.
+  # By setting the `unique` argument to `True`, the roll is simulated in the sense that the dice can't show the same number twice in a row.
   # (If it could, it wouldn't be rolling.)
   # ---
   # @param unique (bool)    Determines whether the previous outcome should be excluded.
@@ -35,7 +35,7 @@ class Die(RNG):
   # ---
   # Called after the instance is created by `__new__()`.
   # ---
-  # @param sides (int)    Amount of sides of the die.
+  # @param sides (int)    Amount of sides of the dice.
   def __init__(self, sides: int = 6) -> None:
     if sides != None:
       self.__sides = sides

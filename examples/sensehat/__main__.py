@@ -1,12 +1,12 @@
 # Import the class and required modules.
-from src.Die import Die
+from src.Dice import Dice
 from matrix import _matrix
 from sense_hat import SenseHat # type: ignore
 from time import sleep
 import atexit
 
 # Create necessary instances and variables, the purpose of which will be explained below.
-die = Die()
+dice = Dice()
 hat = SenseHat()
 degrees = (0, 90, 180, 270)
 rolls = 15
@@ -34,7 +34,7 @@ while True:
     i = 0
     while (i < rolls):
       # Use the outcome of the `roll()` method to retrieve the appropriate matrix image, and display it on the LED display.
-      number = die.roll(True)
+      number = dice.roll(True)
       image = _matrix[number]
       hat.set_pixels(image)
       # Cycle through the different degree values.

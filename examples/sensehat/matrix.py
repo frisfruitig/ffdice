@@ -2,7 +2,7 @@
 O = [0, 0, 0]
 X  = [255, 255, 255]
 
-# Define the matrix for each side of the die.
+# Define the matrix for each side of the dice.
 _matrix = {
   1: [
     X, X, X, X, X, X, X, O,

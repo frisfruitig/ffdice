@@ -1,4 +1,4 @@
-# Color die example
+# Color dice example
 
 This example shows how to pick a color by using the output of the `roll()` method.
 
@@ -7,6 +7,6 @@ This example shows how to pick a color by using the output of the `roll()` metho
 You can run this example with the following command:
 
 ```
-cd path/to/rpi-dice
+cd path/to/pydice
 python -m examples.colors
 ```

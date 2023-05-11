@@ -1,6 +1,6 @@
-# Raspberry Pi Dice
+# PyDice
 
-A simple, undistributed, Python package that acts as a die.
+A simple, undistributed, Python package that acts as a dice.
 Essentially, it's a random number generator (RNG) that can be used for multiple purposes.
 
 ## Getting started

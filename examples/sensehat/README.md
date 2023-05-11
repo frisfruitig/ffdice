@@ -7,7 +7,7 @@ This example shows how to use the output of the `roll()` method to create an ani
 You can run this example on your Raspberry Pi with a SenseHat with the following command:
 
 ```
-cd path/to/rpi-dice
+cd path/to/pydice
 python -m examples.sensehat
 ```
 
