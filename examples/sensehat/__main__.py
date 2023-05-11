@@ -3,13 +3,12 @@ from src.Die import Die
 from matrix import _matrix
 from sense_hat import SenseHat
 from time import sleep
-from itertools import cycle
 import atexit
 
 # Create necessary instances and variables, the purpose of which will be explained below.
 die = Die()
 hat = SenseHat()
-degrees = cycle([0, 90, 180, 270])
+degrees = (0, 90, 180, 270)
 rolls = 15
 threshold = 2
 
@@ -38,8 +37,9 @@ while True:
       number = die.roll(True)
       image = _matrix[number]
       hat.set_pixels(image)
-      # Rotate the LED display to contribute to the simulation of a dice roll, as this makes the image look like it is actually rolling.
-      rotation = next(degrees)
+      # Cycle through the different degree values.
+      # Rotate the LED display to create the illusion of a dice roll.
+      rotation = degrees[i % len(degrees)]
       hat.set_rotation(rotation, False)
       # Continue loop.
       i += 1
