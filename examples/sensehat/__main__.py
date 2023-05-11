@@ -1,7 +1,7 @@
 # Import the class and required modules.
 from src.Die import Die
 from matrix import _matrix
-from sense_hat import SenseHat
+from sense_hat import SenseHat # type: ignore
 from time import sleep
 import atexit
 
