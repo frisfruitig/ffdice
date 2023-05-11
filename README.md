@@ -27,11 +27,6 @@ python -m build
 
 The contents of the `dist` folder can be uploaded to the Python Package Index (pypi). Follow [this guide](https://packaging.python.org/en/latest/tutorials/packaging-projects/#uploading-the-distribution-archives) in order to do so. Currently, this code is _not_ distributed.
 
-## Roadmap
-
-- Rolling a color die, with default and configurable colors
-- Rolling a die with more than six sides, with text display instead of LED images.
-
 ## Notes
 
 This project was created both to learn and to scratch a personal itch. If you like it, or have any issues with it, feel free to [reach out by email](mailto:info@frisfruitig.com)!
