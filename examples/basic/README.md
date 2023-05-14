@@ -7,6 +7,6 @@ This example shows how to create a Dice instance and use the `roll()` method to 
 You can run this example with the following command:
 
 ```
-cd path/to/pydice
+cd path/to/ffdice
 python -m examples.basic
 ```

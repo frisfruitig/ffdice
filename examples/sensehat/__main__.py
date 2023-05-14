@@ -1,5 +1,5 @@
 # Import the class and required modules.
-from src.Dice import Dice
+from src.ffdice import Dice
 from matrix import _matrix
 from sense_hat import SenseHat # type: ignore
 from time import sleep

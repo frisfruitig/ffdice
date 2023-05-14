@@ -1,6 +1,6 @@
 [project]
-name = "PyDice"
-version = "1.0.0"
+name = "ffdice"
+version = "1.0.3"
 authors = [
   { name="FrisFruitig", email="info@frisfruitig.com" },
 ]
@@ -14,8 +14,8 @@ classifiers = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/frisfruitig/pydice"
-"Bug Tracker" = "https://github.com/frisfruitig/pydice/issues"
+"Homepage" = "https://github.com/frisfruitig/ffdice"
+"Bug Tracker" = "https://github.com/frisfruitig/ffdice/issues"
 
 [build-system]
 requires = ["hatchling"]

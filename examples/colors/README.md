@@ -7,6 +7,6 @@ This example shows how to pick a color by using the output of the `roll()` metho
 You can run this example with the following command:
 
 ```
-cd path/to/pydice
+cd path/to/ffdice
 python -m examples.colors
 ```

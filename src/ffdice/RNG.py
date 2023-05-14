@@ -48,4 +48,7 @@ class RNG:
     except Exception as err:
         print(err)
 
+  def __call__(self, *args):
+    return self.__init__(args)
+
   #endregion

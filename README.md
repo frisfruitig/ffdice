@@ -1,9 +1,17 @@
-# PyDice
+# ffdice
 
-A simple, undistributed, Python package that acts as a dice.
+A simple Python package that acts as a dice.
 Essentially, it's a random number generator (RNG) that can be used for multiple purposes.
 
 ## Getting started
+
+### Installation
+
+You install this package by running the following command:
+
+```
+python -m pip install ffdice
+```
 
 ### Examples
 
@@ -19,13 +27,13 @@ python -m unittest
 
 ### Build
 
-You can automatically create a `dist` folder by running the following script:
+You can automatically create a `dist` folder by running the following command:
 
 ```
 python -m build
 ```
 
-The contents of the `dist` folder can be uploaded to the Python Package Index (pypi). Follow [this guide](https://packaging.python.org/en/latest/tutorials/packaging-projects/#uploading-the-distribution-archives) in order to do so. Currently, this code is _not_ distributed.
+The contents of the `dist` folder can be uploaded to the Python Package Index (pypi). Follow [this guide](https://packaging.python.org/en/latest/tutorials/packaging-projects/#uploading-the-distribution-archives) in order to do so.
 
 ## Notes
 
