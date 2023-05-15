@@ -2,7 +2,7 @@
 # Dice
 # ---
 # An RNG subclass that acts as a basic dice.
-# It may return a random number between 1 and 6, based on its sides.
+# It may return a random number between 1 and 6 by default, based on its sides.
 from .RNG import RNG
 
 class Dice(RNG):
