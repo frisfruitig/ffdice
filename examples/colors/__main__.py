@@ -1,5 +1,5 @@
 # Import the class.
-from src.ffdice import Dice
+from ffdice import Dice
 
 # Define colors.
 colors = ("black", "white", "purple", "blue", "green", "yellow", "orange", "red")

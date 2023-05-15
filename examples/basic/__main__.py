@@ -1,5 +1,5 @@
 # Import the class.
-from src.ffdice import Dice
+from ffdice import Dice
 
 # By omitting parameters in the instance creation, you'll create a dice with 6 sides.
 dice_one = Dice()
