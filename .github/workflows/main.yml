@@ -48,7 +48,7 @@ jobs:
       - name: Bump Python package version
         uses: DamianReeves/write-file-action@v1.2
         with:
-          path: example_package/__about__.py
+          path: ffdice/__about__.py
           contents: |
             __version__ = "${{env.VERSION}}"
           write-mode: overwrite
@@ -56,7 +56,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4.16.0
         with:
           commit_message: "ci: Version bump [ignore]"
-          file_pattern: example_package/*.py
+          file_pattern: ffdice/*.py
       # Create a new tag and release.
       - name: Create tag
         uses: rickstaa/action-create-tag@v1
