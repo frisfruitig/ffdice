@@ -1,6 +1,8 @@
 [project]
 name = "ffdice"
-version = "1.0.2"
+dynamic = [
+  "version"
+]
 authors = [
   { name="FrisFruitig", email="info@frisfruitig.com" },
 ]
@@ -12,6 +14,9 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
+
+[tool.hatch.version]
+path = "ffdice/__about__.py"
 
 [project.urls]
 "Homepage" = "https://github.com/frisfruitig/ffdice"
